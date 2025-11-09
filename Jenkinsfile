@@ -22,6 +22,7 @@ pipeline {
                     sh "python3 -m venv ${VENV_DIR}"
                     echo "Upgrading pip and installing dependencies..."
                     sh "${VENV_DIR}/bin/pip install --upgrade pip"
+		    sh "${VENV_DIR}/bin/pip install bandit safety pytest"
                     sh "${VENV_DIR}/bin/pip install -r requirements.txt"
                 }
             }
